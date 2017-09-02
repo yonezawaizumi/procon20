@@ -31,7 +31,7 @@ object Roman3 extends RomanBase {
     }
 
     def parseRoman(str:String): Int = parseAll(romanNumerals, str) match {
-      case Success(num, next) => num
+      case Success(num, next) => if (num > 0) num else -1
       case NoSuccess(errorMessage, next) => -1
     }
   }

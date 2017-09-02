@@ -43,6 +43,7 @@ object Roman1 extends RomanBase {
     e <- parseDigit(h.chrs, 'X', 'L', 'C', 10)
     o <- parseDigit(e.chrs, 'I', 'V', 'X', 1)
   } yield {
-    if (o.chrs.isEmpty) t.num + h.num + e.num + o.num else -1
+    val value = if (o.chrs.isEmpty) t.num + h.num + e.num + o.num else -1
+    if (value > 0) value else -1
   }).getOrElse(-1)
 }

@@ -4003,8 +4003,9 @@ object RomanData {
 -1	I I
 -1	MSM
 -1	MCMIIX
+-1
 """.split('\n').map { line =>
     val mod = line.split('\t')
-    (mod(0).toInt, mod(1))
+    (mod.head.toInt, mod.tail.headOption.getOrElse(""))
   }
 }

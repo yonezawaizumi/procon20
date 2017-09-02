@@ -249,7 +249,7 @@ def parse(str):
 
 for line in sys.stdin:
     mod = line.rstrip().split(None, 1)
-    value = parse(mod[1])
+    value = parse(mod[1] if len(mod) > 1 else "")
     if value != int(mod[0]):
         print("illegal format {0} ('{1}' result {2})".format(mod[0], mod[1], value))
  
